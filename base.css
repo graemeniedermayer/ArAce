@@ -1,0 +1,95 @@
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ui {
+  width: 100%;
+  height: 100%;            
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 40px;
+}
+
+#controller{
+  width: 100%;
+  height: 100%;
+}
+#movement{
+  position: absolute;
+  bottom:50%;
+  left:20%;
+}
+#up-control{
+  position: absolute;
+  bottom: 1rem;
+  right:-2.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+}
+#right-control{
+  position: absolute;
+  left: 1rem;
+  top:-2.5rem;
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%, 0% 50%);
+}
+#left-control{
+  position: absolute;
+  right: 1rem;
+  top:-2.5rem;
+  clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%);
+}
+#down-control{
+  position: absolute;
+  top: 1rem;
+  right:-2.5rem;
+  clip-path: polygon(0 50%, 50% 0, 100% 50%, 100% 100%, 0 100%);
+}
+
+#action{
+  position: absolute;
+  bottom:50%;
+  right:20%;
+}
+#space-control{
+  position: absolute;
+  top: -5rem;
+  right:-5rem;
+  width: 10rem;
+  height: 10rem;
+  clip-path: circle(50% at 50% 50%);
+}
+.controls{
+  background: darkgrey;
+  width: 5rem;
+  height: 5rem;
+}
+.controls:active{
+  background: grey;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1.0;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1.0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0.0;
+    visibility: hidden;
+  }
+}
