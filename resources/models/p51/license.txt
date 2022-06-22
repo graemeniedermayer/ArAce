@@ -1,0 +1,11 @@
+Model Information:
+* title:	P-51D
+* source:	https://sketchfab.com/3d-models/p-51d-f6dd76e8ac874a8781cc778f5cdab3ff
+* author:	ThomasBeerens (https://sketchfab.com/ThomasBeerens)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "P-51D" (https://sketchfab.com/3d-models/p-51d-f6dd76e8ac874a8781cc778f5cdab3ff) by ThomasBeerens (https://sketchfab.com/ThomasBeerens) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
