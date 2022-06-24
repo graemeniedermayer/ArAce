@@ -1,18 +1,18 @@
-import {entity_manager} from './entity-manager.js';
-import {entity} from './entity.js';
+import {entity_manager} from '../entity-manager.js';
+import {entity} from '../entity.js';
 
-import {load_controller} from './load-controller.js';
-import {spawners} from './spawners.js';
+import {load_controller} from '../load-controller.js';
+import {spawners} from '../spawners.js';
 
-import {spatial_hash_grid} from './spatial-hash-grid.js';
-import {threejs_component} from './threejs-component.js';
-import {ammojs_component} from './ammojs-component.js';
+import {spatial_hash_grid} from '../spatial-hash-grid.js';
+import {threejs_component} from '../threejs-component.js';
+import {ammojs_component} from '../ammojs-component.js';
 import {xr_component} from './webxr-component.js';
-import {blaster} from './fx/blaster.js';
+import {blaster} from '../fx/blaster.js';
 
-import {math} from './math.js';
+import {math} from '../math.js';
 
-import {THREE} from './three-defs.js';
+import {THREE} from '../three-defs.js';
 
 
 if ('serviceWorker' in navigator && 'PushManager' in window) { 
@@ -27,7 +27,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   )
 };
 
-class QuickGame2_Sequel {
+class AceGame {
   constructor() {
     this._Initialize();
   }
@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const _Setup = () => {
     Ammo().then(function(AmmoLib) {
       Ammo = AmmoLib;
-      _APP = new QuickGame2_Sequel();
+      _APP = new AceGame();
       globalThis._APP = _APP
     }); 
     document.body.removeEventListener('click', _Setup);
