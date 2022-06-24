@@ -35,7 +35,7 @@ export const threejs_component = (() => {
       }, false);
   
       const fov = 80;
-      const aspect =  Math.max(screen.height, screen.width) / Math.min(screen.width , screen.height);
+      const aspect =  window.innerWidth / window.innerHeight;
       const near = 0.0001;
       const far = 100.0;
       this.camera_ = new THREE.PerspectiveCamera(fov, aspect, near, far);
