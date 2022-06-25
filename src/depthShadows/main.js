@@ -14,19 +14,6 @@ import {math} from '../math.js';
 
 import {THREE} from '../three-defs.js';
 
-
-if ('serviceWorker' in navigator && 'PushManager' in window) { 
-  // Always reset?
-  navigator.serviceWorker.register('/sw.js')
-  .then(
-    function(reg) {}
-  )
-  .catch(function(error) {
-         console.error('Service Worker Error', error);
-    }
-  )
-};
-
 class AceGame {
   constructor() {
     this._Initialize();
