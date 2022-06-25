@@ -18,7 +18,7 @@ export const load_controller = (() => {
     LoadTexture(path, name) {
       if (!(name in this.textures_)) {
         const loader = new THREE.TextureLoader();
-        loader.setPath(path.replace('./','/static/'));
+        loader.setPath(path);
 
         this.textures_[name] = {loader: loader, texture: loader.load(name)};
         this.textures_[name].encoding = THREE.sRGBEncoding;
@@ -30,7 +30,7 @@ export const load_controller = (() => {
     LoadSound(path, name, onLoad) {
       if (!(name in this.sounds_)) {
         const loader = new THREE.AudioLoader();
-        loader.setPath(path.replace('./','/static/'));
+        loader.setPath(path);
 
         loader.load(name, (buf) => {
           this.sounds_[name] = {
@@ -57,9 +57,9 @@ export const load_controller = (() => {
 
     Load(path, name, onLoad) {
       if (name.endsWith('glb') || name.endsWith('gltf')) {
-        this.LoadGLB(path.replace('./','/static/'), name, onLoad);
+        this.LoadGLB(path, name, onLoad);
       } else if (name.endsWith('fbx')) {
-        this.LoadFBX(path.replace('./','/static/'), name, onLoad);
+        this.LoadFBX(path, name, onLoad);
       } else {
         // Silently fail, because screw you future me.
       }
@@ -69,7 +69,7 @@ export const load_controller = (() => {
     LoadFBX(path, name, onLoad) {
       if (!(name in this.models_)) {
         const loader = new FBXLoader();
-        loader.setPath(path.replace('./','/static/'));
+        loader.setPath(path);
 
         this.models_[name] = {loader: loader, asset: null, queue: [onLoad]};
         this.models_[name].loader.load(name, (fbx) => {
@@ -94,7 +94,7 @@ export const load_controller = (() => {
       const fullName = path + name;
       if (!(fullName in this.models_)) {
         const loader = new GLTFLoader();
-        loader.setPath(path.replace('./','/static/'));
+        loader.setPath(path);
 
         this.models_[fullName] = {loader: loader, asset: null, queue: [onLoad]};
         this.models_[fullName].loader.load(name, (glb) => {
