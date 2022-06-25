@@ -1,4 +1,4 @@
-import {entity} from "./entity.js";
+import {entity} from "../entity.js";
 
 // This is a little messy. I need to review JS context/scope
 
