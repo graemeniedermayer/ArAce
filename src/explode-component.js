@@ -109,7 +109,7 @@ export const explode_component = (() => {
       this.particles_ = new particle_system.ParticleSystem({
           camera: params.camera,
           parent: params.scene,
-          texture: './resources/textures/fx/fire.png'.replace('./','/static/'),
+          texture: './resources/textures/fx/fire.png',
       });
       this.timer_ = 10.0;
     }
@@ -195,7 +195,7 @@ export const explode_component = (() => {
       this.particles_ = new particle_system.ParticleSystem({
           camera: params.camera,
           parent: params.scene,
-          texture: './resources/textures/fx/fire.png'.replace('./','/static/'),
+          texture: './resources/textures/fx/fire.png',
       });
       this.timer_ = 10.0;
     }
