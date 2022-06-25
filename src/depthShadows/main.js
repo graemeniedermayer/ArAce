@@ -58,7 +58,7 @@ class AceGame {
     fx.AddComponent(new blaster.BlasterSystem({
         scene: this.scene_,
         camera: this.camera_,
-        texture: './resources/textures/fx/blaster.jpg'.replace('./','/static/'),
+        texture: './resources/textures/fx/blaster.jpg',
     }));
     this.entityManager_.Add(fx, 'fx');
 
