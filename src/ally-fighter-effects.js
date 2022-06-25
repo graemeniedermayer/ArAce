@@ -63,7 +63,7 @@ export const ally_fighter_effect = (() => {
       this.blasterFX_ = new particle_system.ParticleSystem({
           camera: this.params_.camera,
           parent: group,
-          texture: './resources/textures/fx/fire.png'.replace('./','/static/'),
+          texture: './resources/textures/fx/fire.png',
       });
 
       const x = 0.4 * .2;
