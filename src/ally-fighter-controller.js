@@ -101,7 +101,7 @@ export const ally_fighter_controller = (() => {
       this.blasterFX_ = new particle_system.ParticleSystem({
           camera: this.params_.camera,
           parent: group,
-          texture: './resources/textures/fx/blaster.jpg'.replace('./','/static/'),
+          texture: './resources/textures/fx/blaster.jpg',
       });
 
       const loader = this.FindEntity('loader').GetComponent('LoadController');
