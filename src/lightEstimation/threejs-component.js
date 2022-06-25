@@ -1,4 +1,4 @@
-import {THREE, OrbitControls} from '../three-defs.js';
+import {THREE} from '../three-defs.js';
 
 import {entity} from "../entity.js";
 
