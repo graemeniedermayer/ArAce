@@ -30,7 +30,7 @@ body {
 }
 #movement{
   position: absolute;
-  bottom:50%;
+  bottom:10rem;
   left:20%;
 }
 #up-control{
@@ -60,7 +60,7 @@ body {
 
 #action{
   position: absolute;
-  bottom:50%;
+  bottom:10rem;
   right:20%;
 }
 #space-control{
