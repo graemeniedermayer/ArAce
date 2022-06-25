@@ -2,6 +2,7 @@
 My goal here is to create a standard candle AR game for comparing the FPS differences of AR extensions.
 
 ## Demo
+These were done on a samsung S8
 | Demo Name        | FPS MAX           | FPS STD  |
 | ------------- |:-------------:| -----:|
 |[Minimal](https://graemeniedermayer.github.io/ArAce/index.html) |N/A |N/A |
