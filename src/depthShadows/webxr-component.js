@@ -138,7 +138,7 @@ class XRController extends entity.Component {
 			        	vertices = geometry.attributes.position.array;
 			        	baseVertices = new Float32Array(geometry.attributes.position.array);
 			        	convRate = depthData.rawValueToMeters
-                depthMesh = new THREE.Mesh( geometry, new THREE.ShadowMaterial({transparent:false}) );
+                depthMesh = new THREE.Mesh( geometry, new THREE.ShadowMaterial() );
                 depthMesh.frustumCulled=false;
                 depthMesh.receiveShadow = true;
                 scene.add(depthMesh)
