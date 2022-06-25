@@ -124,7 +124,7 @@ class XRController extends entity.Component {
             session.requestAnimationFrame(Render);
             renderer.render( scene, camera );
             let baseLayer = session.renderState.baseLayer;
-            // const pose = frame.getViewerPose(xrRefSpace);
+            const pose = frame.getViewerPose(xrRefSpace);
     	    if (pose) {
     	    	for (const view of pose.views) {
               const viewport = baseLayer.getViewport(view);
