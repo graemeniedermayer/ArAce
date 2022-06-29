@@ -2,6 +2,7 @@ import {THREE} from './three-defs.js';
 
 import {particle_system} from "./particle-system.js";
 import {entity} from './entity.js';
+import {fsm} from './fighter-fsm.js';
 
 
 export const enemy_fighter_controller = (() => {
@@ -82,6 +83,11 @@ export const enemy_fighter_controller = (() => {
       ];
       this.shots_ = [];
       this.offsetIndex_ = 0;
+      this._mixer;
+      this._animations = {};
+      this._propFSM = new fsm.PropFSM(this);
+      this._finFSM = new fsm.FinFSM(this);
+      this._rudderFSM = new fsm.RudderFSM(this);
     }
 
     Destroy() {
@@ -115,7 +121,7 @@ export const enemy_fighter_controller = (() => {
       this.blasterFX_ = new particle_system.ParticleSystem({
           camera: this.params_.camera,
           parent: group,
-          texture: './resources/textures/fx/blaster.jpg',
+          texture: './resources/textures/fx/blaster.jpg'.replace('./','/static/'),
       });
     }
 
@@ -203,7 +209,20 @@ export const enemy_fighter_controller = (() => {
     Update(timeElapsed) {
       this.cooldownTimer_ = Math.max(this.cooldownTimer_ - timeElapsed, 0.0);
       this.powerLevel_ = Math.min(this.powerLevel_ + timeElapsed, 4.0);
+      
+      const input = this.Parent.components_.EnemyAIController.input_;
+      if (!input) {
+        return;
+      }
+      
+      this._propFSM.Update(timeElapsed, input);
+      this._finFSM.Update(timeElapsed, input);
+      this._rudderFSM.Update(timeElapsed, input);
 
+      if(this._mixer){
+        this._mixer.update(timeElapsed);
+      }
+      
       this.UpdateShots_();
       this.blasterFX_.Update(timeElapsed);
     }
