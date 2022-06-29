@@ -13,9 +13,10 @@ export const player_controller = (() => {
       this.params_ = params;
       this.dead_ = false;
       this._mixer;
-      this._propFSM = new fsm.PropFSM();
-      this._finFSM = new fsm.FinFSM();
-      this._rudderFSM = new fsm.RudderFSM();
+      this._animations = {};
+      this._propFSM = new fsm.PropFSM(this);
+      this._finFSM = new fsm.FinFSM(this);
+      this._rudderFSM = new fsm.RudderFSM(this);
     }
 
     InitComponent() {
@@ -51,11 +52,14 @@ export const player_controller = (() => {
       if (!input) {
         return;
       }
+      
+      this._propFSM.Update(timeInSeconds, input);
+      this._finFSM.Update(timeInSeconds, input);
+      this._rudderFSM.Update(timeInSeconds, input);
+
       if(this._mixer){
-        this._mixer.update(timeInSeconds, input);
+        this._mixer.update(timeInSeconds);
       }
-      // this._finFSM.Update(timeInSeconds, input);
-      // this._rudderFSM.Update(timeInSeconds, input);
 
       const velocity = this.velocity_;
       const frameDecceleration = new THREE.Vector3(
