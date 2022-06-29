@@ -86,7 +86,7 @@ export const spawners = (() => {
       e.AddComponent(new enemy_fighter_controller.EnemyFighterController(params));
       e.AddComponent(new render_component.RenderComponent({
         scene: params.scene,
-        resourcePath: './resources/models/reduceYak-1/',
+        resourcePath: './resources/models/animYak-1/',
         resourceName: 'scene.gltf',
         scale: 0.02,
         // scale: 0.0015,
@@ -132,7 +132,7 @@ export const spawners = (() => {
       e.AddComponent(new ally_fighter_effect.AllyFighterEffects(params));
       e.AddComponent(new render_component.RenderComponent({
         scene: params.scene,
-        resourcePath: './resources/models/tie-fighter-gltf/',
+        resourcePath: './resources/models/animYak-1/',
         resourceName: 'scene.gltf',
         scale: .02,
         offset: {
