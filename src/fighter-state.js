@@ -23,10 +23,8 @@ export const player_state = (() => {
     }
   
     Enter(prevState) {
-      this._action = this._parent.animations['Spin'].action;
-
-      this._action.reset();  
-      this._action.loop();
+      this._action = this._parent._parent._animations['Spin'];
+      this._action.loop = THREE.LoopRepeat;
       this._action.play();
       
     }
@@ -46,17 +44,17 @@ export const player_state = (() => {
     }
   
     get Name() {
-      return 'TurnLeftStationary';
+      return 'Left';
     }
   
     Enter(prevState) {
-      this._action = this._parent._parent.animations['TurnLeftStationary'].action;
+      this._action = this._parent._parent._animations['Left'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnRightStationary' || prevState.Name == 'RudderStationary') {
+        if (prevState.Name == 'Right' || prevState.Name == 'Rudder') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -81,15 +79,15 @@ export const player_state = (() => {
         }
     
         if (input.axis1Side > 0) {
-          this._parent.SetState('TurnLeftStationary');
+          this._parent.SetState('Left');
           return;
         }
     
         if (input.axis1Side < 0) {
-          this._parent.SetState('TurnRightStationary');
+          this._parent.SetState('Right');
           return;
         }
-        this._parent.SetState('RudderStationary');
+        this._parent.SetState('Rudder');
     }
   };
 
@@ -102,17 +100,17 @@ export const player_state = (() => {
     }
   
     get Name() {
-      return 'TurnUpStationary';
+      return 'Up';
     }
   
     Enter(prevState) {
-      this._action = this._parent._parent.animations['TurnUpStationary'].action;
+      this._action = this._parent._parent._animations['Up'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnDownStationary' || prevState.Name == 'Stationary') {
+        if (prevState.Name == 'Down' || prevState.Name == 'Stationary') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -138,12 +136,12 @@ export const player_state = (() => {
         }
     
         if (input.axis1Forward > 0) {
-          this._parent.SetState('TurnDownStationary');
+          this._parent.SetState('Up');
           return;
         }
     
         if (input.axis1Forward < 0) {
-          this._parent.SetState('TurnUpStationary');
+          this._parent.SetState('Down');
           return;
         }
         this._parent.SetState('Stationary');
@@ -156,17 +154,17 @@ export const player_state = (() => {
     }
   
     get Name() {
-      return 'TurnDownStationary';
+      return 'Down';
     }
   
     Enter(prevState) {
-      this._action = this._parent._parent.animations['TurnDownStationary'].action;
+      this._action = this._parent._parent._animations['Down'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnUpStationary' || prevState.Name == 'Stationary') {
+        if (prevState.Name == 'Up' || prevState.Name == 'Stationary') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -191,12 +189,12 @@ export const player_state = (() => {
       }
   
       if (input.axis1Forward > 0) {
-        this._parent.SetState('TurnDownStationary');
+        this._parent.SetState('Up');
         return;
       }
   
       if (input.axis1Forward < 0) {
-        this._parent.SetState('TurnUpStationary');
+        this._parent.SetState('Down');
         return;
       }
       this._parent.SetState('Stationary');
@@ -210,17 +208,17 @@ export const player_state = (() => {
     }
   
     get Name() {
-      return 'TurnRightStationary';
+      return 'Right';
     }
   
     Enter(prevState) {
-      this._action = this._parent._parent.animations['TurnRightStationary'].action;
+      this._action = this._parent._parent._animations['Right'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnLeftStationary' || prevState.Name == 'RudderStationary') {
+        if (prevState.Name == 'Left' || prevState.Name == 'Rudder') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -245,15 +243,15 @@ export const player_state = (() => {
         }
     
         if (input.axis1Side > 0) {
-          this._parent.SetState('TurnLeftStationary');
+          this._parent.SetState('Left');
           return;
         }
     
         if (input.axis1Side < 0) {
-          this._parent.SetState('TurnRightStationary');
+          this._parent.SetState('Right');
           return;
         }
-        this._parent.SetState('RudderStationary');
+        this._parent.SetState('Rudder');
     }
   };
   
@@ -268,13 +266,13 @@ export const player_state = (() => {
     }
   
     Enter(prevState) {
-      this._action =this._parent._parent.animations['Stationary'].action;
+      this._action =this._parent._parent._animations['Stationary'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnUpStationary' || prevState.Name == 'TurnDownStationary') {
+        if (prevState.Name == 'Up' || prevState.Name == 'Down') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -299,34 +297,34 @@ export const player_state = (() => {
         }
     
         if (input.axis1Forward > 0) {
-          this._parent.SetState('TurnDownStationary');
+          this._parent.SetState('Up');
           return;
         }
     
         if (input.axis1Forward < 0) {
-          this._parent.SetState('TurnUpStationary');
+          this._parent.SetState('Down');
           return;
         }
         this._parent.SetState('Stationary');
     }
   };
-  class RudderStationaryState extends State {
+  class RudderState extends State {
     constructor(parent) {
       super(parent);
     }
   
     get Name() {
-      return 'RudderStationary';
+      return 'Rudder';
     }
   
     Enter(prevState) {
-      this._action = this._parent._parent.animations['RudderStationary'].action;
+      this._action = this._parent._parent._animations['Rudder'];
       if (prevState) {
-        const prevAction = this._parent._parent.animations[prevState.Name].action;
+        const prevAction = this._parent._parent._animations[prevState.Name];
   
         this._action.enabled = true;
   
-        if (prevState.Name == 'TurnRightStationary' || prevState.Name == 'TurnLeftStationary') {
+        if (prevState.Name == 'Right' || prevState.Name == 'Left') {
           const ratio = this._action.getClip().duration / prevAction.getClip().duration;
           this._action.time = prevAction.time * ratio;
         } else {
@@ -350,16 +348,16 @@ export const player_state = (() => {
           return;
         }
     
-        if (input._keys.left) {
-          this._parent.SetState('TurnLeftStationary');
+        if (input.axis1Side) {
+          this._parent.SetState('Left');
           return;
         }
     
-        if (input._keys.right) {
-          this._parent.SetState('TurnRightStationary');
+        if (input.axis1Side) {
+          this._parent.SetState('Right');
           return;
         }
-        this._parent.SetState('RudderStationary');
+        this._parent.SetState('Rudder');
     }
   };
 
@@ -370,7 +368,7 @@ export const player_state = (() => {
     DownState: DownState,
     PropState: PropState,
     StationaryState: StationaryState,
-    RudderStationaryState: RudderStationaryState
+    RudderState: RudderState
   };
 
 })();
