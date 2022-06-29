@@ -1,21 +1,20 @@
-
 import {finite_state_machine} from './finite-state-machine.js'
 import {player_state} from './fighter-state.js'
   
 export const fsm = (() => {
-    class PropFSM extends finite_state_machine.FiniteStateMachine {
-    constructor() {
-      super();
+  class PropFSM extends finite_state_machine.FiniteStateMachine {
+    constructor(params) {
+      super(params);
       this._Init();
     }
   
     _Init() {
-      this._AddState('Spin', player_state.spin);
+      this._AddState('Spin', player_state.PropState);
     }
   };
   class FinFSM extends finite_state_machine.FiniteStateMachine {
-    constructor() {
-      super();
+    constructor(params) {
+      super(params);
       this._Init();
     }
   
@@ -27,9 +26,8 @@ export const fsm = (() => {
   };
   
   class RudderFSM extends finite_state_machine.FiniteStateMachine {
-    constructor(proxy) {
-      super();
-      this._proxy = proxy;
+    constructor(params) {
+      super(params);
       this._Init();
     }
   
