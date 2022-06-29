@@ -68,15 +68,14 @@ export const render_component = (() => {
       const loader = this.FindEntity('loader').GetComponent('LoadController');
       loader.Load(
         this.params_.resourcePath, this.params_.resourceName, (mdl,anim) => {
-        if(anim && this.Parent.components_.PlayerController){
-          let animations = {};
-          this.Parent.components_.PlayerController._mixer = new THREE.AnimationMixer( mdl );
+          let controller = this.Parent.components_.PlayerController ? this.Parent.components_.PlayerController : this.Parent.components_.EnemyFighterController
+          controller._mixer = new THREE.AnimationMixer( mdl );
           anim.forEach(x=>{
-            animations[x.name]= this.Parent.components_.PlayerController._mixer.clipAction( x );
-            animations[x.name].play()
+            controller._animations[x.name] = controller._mixer.clipAction(x);
           });
-          this.Parent.components_.PlayerController._animations = animations;
-        }
+          controller._finFSM.SetState('Stationary')
+          controller._propFSM.SetState('Spin')
+          controller._rudderFSM.SetState('Rudder')
         this._OnLoaded(mdl);
       });
     }
