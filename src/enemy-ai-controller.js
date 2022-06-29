@@ -13,6 +13,7 @@ export const enemy_ai_controller = (() => {
   const _ATTACK_FORCE = 2.5;
   const _MAX_TARGET_DISTANCE = 15;
   const _MAX_ANGLE = 0.9;
+  const _input = {axis1Forward:0, axis1Side:0}
 
   const _TMP_M0 = new THREE.Matrix4();
   const _TMP_Q0 = new THREE.Quaternion();
@@ -22,6 +23,7 @@ export const enemy_ai_controller = (() => {
       super();
       this.params_ = params;
       this.grid_ = params.grid;
+      this.input_ = {axis1Forward:0, axis1Side:0};
       this.Init_();
     }
   
@@ -67,6 +69,10 @@ export const enemy_ai_controller = (() => {
         steeringForce.multiplyScalar(this.maxSteeringForce_ * timeElapsed);
       }
   
+      this.input_.axis1Forward = steeringForce.y && (steeringForce.y > 0 ? 1 : -1)
+      let dot = this.velocity_.x * steeringForce.x + this.velocity_.z * steeringForce.z
+      this.input_.axis1Side = dot && (dot > 0 ? 1 : -1)
+
       this.velocity_.add(steeringForce);
   
       // // Clamp velocity
