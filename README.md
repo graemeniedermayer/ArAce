@@ -10,7 +10,6 @@ These were done on a samsung S8
 |[Realtime Light Estimation](https://graemeniedermayer.github.io/ArAce/lightEstimation.html) |N/A |N/A |
 |[Realtime Depth Shadows + Realtime Light Estimation](https://graemeniedermayer.github.io/ArAce/lightEstimationShadowEstimation.html) |N/A |N/A |
 |[Realtime Occlusion + Shadows + Light Estimation](https://graemeniedermayer.github.io/ArAce/occlusionShadow.html) 
-
 |Bloom (soon) |N/A |N/A |
 |Depth of Field |N/A |N/A |
 |After image |N/A |N/A |
