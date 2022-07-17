@@ -1,18 +1,18 @@
-import {entity_manager} from './entity-manager.js';
-import {entity} from './entity.js';
+import {entity_manager} from '../entity-manager.js';
+import {entity} from '../entity.js';
 
-import {load_controller} from './load-controller.js';
-import {spawners} from './spawners.js';
+import {load_controller} from '../load-controller.js';
+import {spawners} from '../spawners.js';
 
-import {spatial_hash_grid} from './spatial-hash-grid.js';
+import {spatial_hash_grid} from '../spatial-hash-grid.js';
 import {threejs_component} from './threejs-component.js';
-import {ammojs_component} from './ammojs-component.js';
+import {ammojs_component} from '../ammojs-component.js';
 import {xr_component} from './webxr-component.js';
-import {blaster} from './fx/blaster.js';
+import {blaster} from '../fx/blaster.js';
 
-import {math} from './math.js';
+import {math} from '../math.js';
 
-import {THREE} from './three-defs.js';
+import {THREE} from '../post/three-defs.js';
 
 
 class QuickGame {
