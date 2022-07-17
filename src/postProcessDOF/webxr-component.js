@@ -96,17 +96,12 @@ class XRController extends entity.Component {
         const renderPass = new RenderPass( scene, camera );
         this.composer_.addPass( renderPass );
 
-        const bloomPass = new UnrealBloomPass();
-        bloomPass.threshold = 0;
-		    bloomPass.strength = 4;
-		    bloomPass.radius = 0.1;
-        this.composer_.addPass( bloomPass );
-	 	    let bokehPass = new BokehPass(scene, camera, {
+        let bokehPass = new BokehPass(scene, camera, {
             focus: 1.0,
             aperture: 0.025,
             maxblur: 0.5,
         } );
-	      this.composer_.addPass( bokehPass );
+	this.composer_.addPass( bokehPass );
         globalThis.composer = this.composer_
   
         session.requestReferenceSpace('local').then((refSpace) => {
