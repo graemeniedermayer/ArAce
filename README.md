@@ -1,5 +1,5 @@
 # ArAce
-My goal here is to create a standard candle AR game for comparing the FPS differences of AR extensions.
+My goal here is to create a standard candle AR game for comparing the FPS differences of AR extensions. This is webxr so it only works on android and varieties of chromium (possibly firefox)
 
 ## Demo
 These were done on a samsung S8
