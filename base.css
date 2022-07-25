@@ -72,12 +72,12 @@ body {
   clip-path: circle(50% at 50% 50%);
 }
 .controls{
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
   width: 5rem;
   height: 5rem;
 }
 .controls:active{
-  ackground: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.3);
 }
 @keyframes fadeOut {
   0% {
