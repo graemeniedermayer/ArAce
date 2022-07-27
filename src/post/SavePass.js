@@ -4,7 +4,7 @@ import {
 	WebGLRenderTarget
 } from 'three';
 import { Pass, FullScreenQuad } from './Pass.js';
-import { CopyShader } from '../shaders/CopyShader.js';
+import { CopyShader } from './shaders/CopyShader.js';
 
 class SavePass extends Pass {
 
