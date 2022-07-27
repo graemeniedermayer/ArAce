@@ -10,4 +10,4 @@ import {BokehPass} from './BokehPass.js';
 import {UnrealBloomPass} from './UnrealBloomPass.js';
 import {AfterimagePass} from './AfterimagePass.js';
 globalThis.THREE = THREE;
-export {THREE, FBXLoader, GLTFLoader, SkeletonUtils, OrbitControls, AfterimagePass, RenderPass, EffectComposer, GlitchPass, UnrealBloomPass, BokehPass};
+export {THREE, FBXLoader, GLTFLoader, SkeletonUtils, OrbitControls, AfterimagePass, RenderPass, EffectComposer, UnrealBloomPass, BokehPass};
