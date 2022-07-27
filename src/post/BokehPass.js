@@ -11,7 +11,7 @@ import {
 	Vector2
 } from 'three';
 import { Pass, FullScreenQuad } from './Pass.js';
-import { BokehShader } from '../shaders/BokehShader.js';
+import { BokehShader } from './shaders/BokehShader.js';
 
 /**
  * Depth-of-field post-process with bokeh shader
