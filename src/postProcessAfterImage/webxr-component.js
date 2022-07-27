@@ -1,5 +1,5 @@
 import {entity} from "../entity.js";
-import {THREE, RenderPass, EffectComposer, UnrealBloomPass} from '../post/three-defs.js';
+import {THREE, RenderPass, EffectComposer, UnrealBloomPass, AfterimagePass} from '../post/three-defs.js';
 // This is a little messy. I need to review JS context/scope
 
 export const xr_component = (() => {
