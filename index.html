@@ -36,7 +36,14 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/gh/kripken/ammo.js@HEAD/builds/ammo.js"></script>
-  <script src="./initSW.js">
+  <script>
+  navigator.serviceWorker.register('./sw.js')
+	  .then(function(reg){
+	  })
+	  .catch(function(error) {
+     			console.error('Service Worker Error', error);
+	  })
+  </script>
   <script src="./src/main.js" type="module">
   </script>
 </body>
